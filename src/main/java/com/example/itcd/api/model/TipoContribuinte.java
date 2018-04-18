@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.partes;
+package com.example.itcd.api.model;
 
 public enum TipoContribuinte {
 	

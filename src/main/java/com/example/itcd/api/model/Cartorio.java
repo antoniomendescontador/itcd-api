@@ -1,9 +1,7 @@
-package com.example.itcd.api.model.partes;
+package com.example.itcd.api.model;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,27 +9,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
-import com.example.itcd.api.model.utils.Endereco;
-import com.example.itcd.api.model.utils.Pessoa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "contribuinte")
-public class Contribuinte {
+@Table(name = "cartorio")
+public class Cartorio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
+	private String nome_cartorio;
+	private String cnpj;
+	private String oficio;
+	private String comarca;
+	private Boolean ativo;
+	private String observacao;
 	@Embedded
-	private Pessoa contribuinte;
-	@Enumerated(EnumType.STRING)
-	private TipoContribuinte tipo;
+	private Pessoa oficialTitular;
 	@Embedded
 	private Endereco endereco;
+	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id", nullable = false)
+	@JoinColumn(name = "declaracao_inventario_extrajudicial_id", nullable = true)
 	private DeclarInventExtr declaracao;
 
 	public Long getCodigo() {
@@ -42,20 +42,20 @@ public class Contribuinte {
 		this.codigo = codigo;
 	}
 
-	public Pessoa getContribuinte() {
-		return contribuinte;
+	public String getOficio() {
+		return oficio;
 	}
 
-	public void setContribuinte(Pessoa contribuinte) {
-		this.contribuinte = contribuinte;
+	public void setOficio(String oficio) {
+		this.oficio = oficio;
 	}
 
-	public TipoContribuinte getTipo() {
-		return tipo;
+	public String getNome_cartorio() {
+		return nome_cartorio;
 	}
 
-	public void setTipo(TipoContribuinte tipo) {
-		this.tipo = tipo;
+	public void setNome_cartorio(String nome_cartorio) {
+		this.nome_cartorio = nome_cartorio;
 	}
 
 	public Endereco getEndereco() {
@@ -64,6 +64,46 @@ public class Contribuinte {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getComarca() {
+		return comarca;
+	}
+
+	public void setComarca(String comarca) {
+		this.comarca = comarca;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public Pessoa getOficialTitular() {
+		return oficialTitular;
+	}
+
+	public void setOficialTitular(Pessoa oficialTitular) {
+		this.oficialTitular = oficialTitular;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 
 	public DeclarInventExtr getDeclaracao() {
@@ -90,7 +130,7 @@ public class Contribuinte {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contribuinte other = (Contribuinte) obj;
+		Cartorio other = (Cartorio) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.declaracao;
+package com.example.itcd.api.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.example.itcd.api.model.cartorio.Cartorio;
-import com.example.itcd.api.model.imovel.rural.ImovelRural;
-import com.example.itcd.api.model.imovel.urbano.ImovelUrbano;
-import com.example.itcd.api.model.movel.AcaoNaoNegociadaBolsa;
-import com.example.itcd.api.model.movel.AcaoNegociadaBolsa;
-import com.example.itcd.api.model.movel.Semovente;
-import com.example.itcd.api.model.movel.Veiculo;
-import com.example.itcd.api.model.partes.Contribuinte;
 
 @Entity
 @Table(name = "declaracao_inventario_extrajudicial")

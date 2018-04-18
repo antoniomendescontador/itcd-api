@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.movel;
+package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
 
@@ -11,26 +11,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "veiculo")
-public class Veiculo {
+@Table(name = "acao_negociada_bolsa")
+public class AcaoNegociadaBolsa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	private String renavan;
-	private String placa;
-	private String marca;
-	private String modelo;
-	private String ano;
-	@Column(name = "valor_declarado")
-	private BigDecimal valorDeclarado;
-	/* retirar da webservice de tabela fipe */
+	private String nome;
+	@Column(name = "codigo_acao")
+	private String codigoAcao;
+	private BigDecimal quantidade;
 	@Column(name = "valor_avaliado")
 	private BigDecimal valorAvaliado;
+	@Column(name = "valor_declarado")
+	private BigDecimal valorDeclarado;
+	@Column(name = "valor_total")
+	private BigDecimal valorTotal;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
@@ -44,44 +43,20 @@ public class Veiculo {
 		this.codigo = codigo;
 	}
 
-	public String getRenavan() {
-		return renavan;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setRenavan(String renavan) {
-		this.renavan = renavan;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getPlaca() {
-		return placa;
+	public String getCodigoAcao() {
+		return codigoAcao;
 	}
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-
-	public String getAno() {
-		return ano;
-	}
-
-	public void setAno(String ano) {
-		this.ano = ano;
+	public void setCodigoAcao(String codigoAcao) {
+		this.codigoAcao = codigoAcao;
 	}
 
 	public BigDecimal getValorDeclarado() {
@@ -98,6 +73,22 @@ public class Veiculo {
 
 	public void setValorAvaliado(BigDecimal valorAvaliado) {
 		this.valorAvaliado = valorAvaliado;
+	}
+
+	public BigDecimal getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(BigDecimal quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public BigDecimal getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(BigDecimal valorTotal) {
+		this.valorTotal = valorTotal;
 	}
 
 	public DeclarInventExtr getDeclaracao() {
@@ -124,7 +115,7 @@ public class Veiculo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Veiculo other = (Veiculo) obj;
+		AcaoNegociadaBolsa other = (AcaoNegociadaBolsa) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

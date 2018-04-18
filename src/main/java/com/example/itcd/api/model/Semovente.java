@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.movel;
+package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
 
@@ -11,24 +11,22 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "acao_negociada_bolsa")
-public class AcaoNegociadaBolsa {
+@Table(name = "semovente")
+public class Semovente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	private String nome;
-	@Column(name = "codigo_acao")
-	private String codigoAcao;
-	private BigDecimal quantidade;
-	@Column(name = "valor_avaliado")
-	private BigDecimal valorAvaliado;
+	private String produto;
+	private String unidade;
+	@Column(name = "boletim_preco_minimo")
+	private BigDecimal boletimPrecoMinimo;
 	@Column(name = "valor_declarado")
 	private BigDecimal valorDeclarado;
+	private BigDecimal quantidade;
 	@Column(name = "valor_total")
 	private BigDecimal valorTotal;
 	@JsonIgnore
@@ -44,20 +42,28 @@ public class AcaoNegociadaBolsa {
 		this.codigo = codigo;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getProduto() {
+		return produto;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setProduto(String produto) {
+		this.produto = produto;
 	}
 
-	public String getCodigoAcao() {
-		return codigoAcao;
+	public String getUnidade() {
+		return unidade;
 	}
 
-	public void setCodigoAcao(String codigoAcao) {
-		this.codigoAcao = codigoAcao;
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
+	}
+
+	public BigDecimal getBoletimPrecoMinimo() {
+		return boletimPrecoMinimo;
+	}
+
+	public void setBoletimPrecoMinimo(BigDecimal boletimPrecoMinimo) {
+		this.boletimPrecoMinimo = boletimPrecoMinimo;
 	}
 
 	public BigDecimal getValorDeclarado() {
@@ -66,14 +72,6 @@ public class AcaoNegociadaBolsa {
 
 	public void setValorDeclarado(BigDecimal valorDeclarado) {
 		this.valorDeclarado = valorDeclarado;
-	}
-
-	public BigDecimal getValorAvaliado() {
-		return valorAvaliado;
-	}
-
-	public void setValorAvaliado(BigDecimal valorAvaliado) {
-		this.valorAvaliado = valorAvaliado;
 	}
 
 	public BigDecimal getQuantidade() {
@@ -116,7 +114,7 @@ public class AcaoNegociadaBolsa {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AcaoNegociadaBolsa other = (AcaoNegociadaBolsa) obj;
+		Semovente other = (Semovente) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

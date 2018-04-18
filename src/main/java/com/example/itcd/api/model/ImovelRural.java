@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.imovel.rural;
+package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
 
@@ -12,8 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
-import com.example.itcd.api.model.utils.Endereco;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity

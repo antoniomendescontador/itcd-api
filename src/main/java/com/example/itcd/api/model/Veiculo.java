@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.movel;
+package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
 
@@ -11,25 +11,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "semovente")
-public class Semovente {
+@Table(name = "veiculo")
+public class Veiculo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	private String produto;
-	private String unidade;
-	@Column(name = "boletim_preco_minimo")
-	private BigDecimal boletimPrecoMinimo;
+	private String renavan;
+	private String placa;
+	private String marca;
+	private String modelo;
+	private String ano;
 	@Column(name = "valor_declarado")
 	private BigDecimal valorDeclarado;
-	private BigDecimal quantidade;
-	@Column(name = "valor_total")
-	private BigDecimal valorTotal;
+	/* retirar da webservice de tabela fipe */
+	@Column(name = "valor_avaliado")
+	private BigDecimal valorAvaliado;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
@@ -43,28 +43,44 @@ public class Semovente {
 		this.codigo = codigo;
 	}
 
-	public String getProduto() {
-		return produto;
+	public String getRenavan() {
+		return renavan;
 	}
 
-	public void setProduto(String produto) {
-		this.produto = produto;
+	public void setRenavan(String renavan) {
+		this.renavan = renavan;
 	}
 
-	public String getUnidade() {
-		return unidade;
+	public String getPlaca() {
+		return placa;
 	}
 
-	public void setUnidade(String unidade) {
-		this.unidade = unidade;
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 
-	public BigDecimal getBoletimPrecoMinimo() {
-		return boletimPrecoMinimo;
+	public String getMarca() {
+		return marca;
 	}
 
-	public void setBoletimPrecoMinimo(BigDecimal boletimPrecoMinimo) {
-		this.boletimPrecoMinimo = boletimPrecoMinimo;
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
 	}
 
 	public BigDecimal getValorDeclarado() {
@@ -75,20 +91,12 @@ public class Semovente {
 		this.valorDeclarado = valorDeclarado;
 	}
 
-	public BigDecimal getQuantidade() {
-		return quantidade;
+	public BigDecimal getValorAvaliado() {
+		return valorAvaliado;
 	}
 
-	public void setQuantidade(BigDecimal quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public BigDecimal getValorTotal() {
-		return valorTotal;
-	}
-
-	public void setValorTotal(BigDecimal valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setValorAvaliado(BigDecimal valorAvaliado) {
+		this.valorAvaliado = valorAvaliado;
 	}
 
 	public DeclarInventExtr getDeclaracao() {
@@ -115,7 +123,7 @@ public class Semovente {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Semovente other = (Semovente) obj;
+		Veiculo other = (Veiculo) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

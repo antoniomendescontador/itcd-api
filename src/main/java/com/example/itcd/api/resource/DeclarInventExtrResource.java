@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
+import com.example.itcd.api.model.DeclarInventExtr;
 import com.example.itcd.api.service.DeclarInventExtrService;
 
 @RestController

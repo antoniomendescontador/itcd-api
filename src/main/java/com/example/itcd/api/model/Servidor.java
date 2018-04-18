@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.partes;
+package com.example.itcd.api.model;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -8,9 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.example.itcd.api.model.utils.Endereco;
-import com.example.itcd.api.model.utils.Pessoa;
 
 @Entity
 @Table(name = "servidor")

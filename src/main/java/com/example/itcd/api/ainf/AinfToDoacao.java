@@ -11,10 +11,10 @@ public class AinfToDoacao {
 	@Test
 	public void calculoAINFDoacao() {
 
-		String processo = "0928340298347";
-		String doador = "Gilberto dos Santos Muniz";
-		String cpfDoador = "042.228.902-78";
-		Double baseDeCalculo = 143903.84;
+		String processo = "042017730007234-0";
+		String doador = "Raimunda dos Santos Cardoso";
+		String cpfDoador = "496.302.532-91";
+		Double baseDeCalculo = 103700.00;
 		Double quantDonatario = 1.00;
 
 		Double cotaHerdeiro = 1 / quantDonatario;

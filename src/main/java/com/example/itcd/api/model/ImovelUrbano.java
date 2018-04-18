@@ -1,5 +1,8 @@
-package com.example.itcd.api.model.cartorio;
+package com.example.itcd.api.model;
 
+import java.math.BigDecimal;
+
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,32 +12,33 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.itcd.api.model.declaracao.DeclarInventExtr;
-import com.example.itcd.api.model.utils.Endereco;
-import com.example.itcd.api.model.utils.Pessoa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "cartorio")
-public class Cartorio {
-
+@Table(name = "imovel_urbano")
+public class ImovelUrbano {
+	/*
+	 * falta fazer o relacionamento muitos para muitos com a classe
+	 * indiceAtualizacao
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	private String nome_cartorio;
-	private String cnpj;
-	private String oficio;
-	private String comarca;
-	private Boolean ativo;
-	private String observacao;
 	@Embedded
-	private Pessoa oficialTitular;
+	private Propriedade propriedade;
+	@Embedded
+	private Iptu iptu;
 	@Embedded
 	private Endereco endereco;
-	
+	@Column(name = "valor_avaliado_iptu")
+	private BigDecimal valorAvaliadoIptu;
+	@Column(name = "valor_avaliado_cub")
+	private BigDecimal valorAvaliadoCub;
+	@Column(name = "valor_avaliado_mt_quadr")
+	private BigDecimal valorAvaliadoMetroQuad;
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id", nullable = true)
+	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
 	private DeclarInventExtr declaracao;
 
 	public Long getCodigo() {
@@ -45,20 +49,20 @@ public class Cartorio {
 		this.codigo = codigo;
 	}
 
-	public String getOficio() {
-		return oficio;
+	public Propriedade getPropriedade() {
+		return propriedade;
 	}
 
-	public void setOficio(String oficio) {
-		this.oficio = oficio;
+	public void setPropriedade(Propriedade propriedade) {
+		this.propriedade = propriedade;
 	}
 
-	public String getNome_cartorio() {
-		return nome_cartorio;
+	public Iptu getIptu() {
+		return iptu;
 	}
 
-	public void setNome_cartorio(String nome_cartorio) {
-		this.nome_cartorio = nome_cartorio;
+	public void setIptu(Iptu iptu) {
+		this.iptu = iptu;
 	}
 
 	public Endereco getEndereco() {
@@ -69,44 +73,28 @@ public class Cartorio {
 		this.endereco = endereco;
 	}
 
-	public String getComarca() {
-		return comarca;
+	public BigDecimal getValorAvaliadoIptu() {
+		return valorAvaliadoIptu;
 	}
 
-	public void setComarca(String comarca) {
-		this.comarca = comarca;
+	public void setValorAvaliadoIptu(BigDecimal valorAvaliadoIptu) {
+		this.valorAvaliadoIptu = valorAvaliadoIptu;
 	}
 
-	public String getCnpj() {
-		return cnpj;
+	public BigDecimal getValorAvaliadoCub() {
+		return valorAvaliadoCub;
 	}
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	public void setValorAvaliadoCub(BigDecimal valorAvaliadoCub) {
+		this.valorAvaliadoCub = valorAvaliadoCub;
 	}
 
-	public Pessoa getOficialTitular() {
-		return oficialTitular;
+	public BigDecimal getValorAvaliadoMetroQuad() {
+		return valorAvaliadoMetroQuad;
 	}
 
-	public void setOficialTitular(Pessoa oficialTitular) {
-		this.oficialTitular = oficialTitular;
-	}
-
-	public Boolean getAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(Boolean ativo) {
-		this.ativo = ativo;
-	}
-
-	public String getObservacao() {
-		return observacao;
-	}
-
-	public void setObservacao(String observacao) {
-		this.observacao = observacao;
+	public void setValorAvaliadoMetroQuad(BigDecimal valorAvaliadoMetroQuad) {
+		this.valorAvaliadoMetroQuad = valorAvaliadoMetroQuad;
 	}
 
 	public DeclarInventExtr getDeclaracao() {
@@ -133,7 +121,7 @@ public class Cartorio {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cartorio other = (Cartorio) obj;
+		ImovelUrbano other = (ImovelUrbano) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

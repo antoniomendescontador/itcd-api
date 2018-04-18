@@ -1,4 +1,4 @@
-package com.example.itcd.api.model.imovel.urbano;
+package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
 

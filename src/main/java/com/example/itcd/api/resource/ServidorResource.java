@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.itcd.api.model.partes.Servidor;
+import com.example.itcd.api.model.Servidor;
 import com.example.itcd.api.repository.ServidorRepository;
 
 @RestController
