@@ -37,7 +37,7 @@ public class AcaoNaoNegociadaBolsa {
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
-	private DeclarInventExtr declaracao;
+	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {
 		return codigo;

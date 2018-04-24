@@ -33,7 +33,7 @@ public class Veiculo {
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
-	private DeclarInventExtr declaracao;
+	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {
 		return codigo;
@@ -99,11 +99,11 @@ public class Veiculo {
 		this.valorAvaliado = valorAvaliado;
 	}
 
-	public DeclarInventExtr getDeclaracao() {
+	public InventarioExtrajudicial getDeclaracao() {
 		return declaracao;
 	}
 
-	public void setDeclaracao(DeclarInventExtr declaracao) {
+	public void setDeclaracao(InventarioExtrajudicial declaracao) {
 		this.declaracao = declaracao;
 	}
 

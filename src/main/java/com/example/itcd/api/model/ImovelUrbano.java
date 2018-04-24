@@ -1,6 +1,8 @@
 package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -36,10 +39,14 @@ public class ImovelUrbano {
 	private BigDecimal valorAvaliadoCub;
 	@Column(name = "valor_avaliado_mt_quadr")
 	private BigDecimal valorAvaliadoMetroQuad;
+
+	@ManyToMany(mappedBy = "imovelUrbanos")
+	private List<IndiceAtualizacao> indices = new ArrayList<>();
+
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
-	private DeclarInventExtr declaracao;
+	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {
 		return codigo;
@@ -97,11 +104,19 @@ public class ImovelUrbano {
 		this.valorAvaliadoMetroQuad = valorAvaliadoMetroQuad;
 	}
 
-	public DeclarInventExtr getDeclaracao() {
+	public List<IndiceAtualizacao> getIndices() {
+		return indices;
+	}
+
+	public void setIndices(List<IndiceAtualizacao> indices) {
+		this.indices = indices;
+	}
+
+	public InventarioExtrajudicial getDeclaracao() {
 		return declaracao;
 	}
 
-	public void setDeclaracao(DeclarInventExtr declaracao) {
+	public void setDeclaracao(InventarioExtrajudicial declaracao) {
 		this.declaracao = declaracao;
 	}
 

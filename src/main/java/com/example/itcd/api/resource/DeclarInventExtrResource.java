@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.example.itcd.api.model.DeclarInventExtr;
+import com.example.itcd.api.model.InventarioExtrajudicial;
 import com.example.itcd.api.service.DeclarInventExtrService;
 
 @RestController
@@ -24,13 +24,13 @@ public class DeclarInventExtrResource {
 	private DeclarInventExtrService service;
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
-	public ResponseEntity<DeclarInventExtr> find(@PathVariable Long codigo){
-		DeclarInventExtr obj = service.find(codigo);
+	public ResponseEntity<InventarioExtrajudicial> find(@PathVariable Long codigo){
+		InventarioExtrajudicial obj = service.find(codigo);
 		return ResponseEntity.ok().body(obj);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@Valid @RequestBody DeclarInventExtr obj) {
+	public ResponseEntity<Void> insert(@Valid @RequestBody InventarioExtrajudicial obj) {
 		obj = service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{codigo}").buildAndExpand(obj.getCodigo()).toUri();
 		return ResponseEntity.created(uri).build();

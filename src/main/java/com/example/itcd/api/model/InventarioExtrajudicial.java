@@ -8,40 +8,43 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "declaracao_inventario_extrajudicial")
-public class DeclarInventExtr {
+public class InventarioExtrajudicial {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private String identificacao;
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Cartorio> cartorios;
+	@ManyToOne
+	@JoinColumn(name="cartorio_id")
+	private Cartorio cartorio;
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<Contribuinte> contribuinte = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<ImovelUrbano> imoveUrbano = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<ImovelRural> imovelRural = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<Veiculo> veiculo = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<Semovente> semovente = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<AcaoNaoNegociadaBolsa> acaoNaoNegociadaBolsa = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
 	private List<AcaoNegociadaBolsa> acaoNegociadaBolsa = new ArrayList<>();
 
 	public Long getCodigo() {
@@ -60,12 +63,12 @@ public class DeclarInventExtr {
 		this.identificacao = identificacao;
 	}
 
-	public List<Cartorio> getCartorios() {
-		return cartorios;
+	public Cartorio getCartorio() {
+		return cartorio;
 	}
-
-	public void setCartorios(List<Cartorio> cartorios) {
-		this.cartorios = cartorios;
+	
+	public void setCartorio(Cartorio cartorio) {
+		this.cartorio = cartorio;
 	}
 
 	public List<Contribuinte> getContribuinte() {
@@ -140,7 +143,7 @@ public class DeclarInventExtr {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		DeclarInventExtr other = (DeclarInventExtr) obj;
+		InventarioExtrajudicial other = (InventarioExtrajudicial) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

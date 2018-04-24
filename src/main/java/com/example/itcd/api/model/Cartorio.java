@@ -5,11 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cartorio")
@@ -24,16 +20,13 @@ public class Cartorio {
 	private String comarca;
 	private Boolean ativo;
 	private String observacao;
+	
 	@Embedded
 	private Pessoa oficialTitular;
+	
 	@Embedded
 	private Endereco endereco;
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id", nullable = true)
-	private DeclarInventExtr declaracao;
-
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -104,14 +97,6 @@ public class Cartorio {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}
-
-	public DeclarInventExtr getDeclaracao() {
-		return declaracao;
-	}
-
-	public void setDeclaracao(DeclarInventExtr declaracao) {
-		this.declaracao = declaracao;
 	}
 
 	@Override

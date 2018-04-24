@@ -49,7 +49,7 @@ public class ImovelRural {
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
-	private DeclarInventExtr declaracao;
+	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {
 		return codigo;
@@ -163,11 +163,11 @@ public class ImovelRural {
 		this.valorDeclarado = valorDeclarado;
 	}
 
-	public DeclarInventExtr getDeclaracao() {
+	public InventarioExtrajudicial getDeclaracao() {
 		return declaracao;
 	}
 
-	public void setDeclaracao(DeclarInventExtr declaracao) {
+	public void setDeclaracao(InventarioExtrajudicial declaracao) {
 		this.declaracao = declaracao;
 	}
 

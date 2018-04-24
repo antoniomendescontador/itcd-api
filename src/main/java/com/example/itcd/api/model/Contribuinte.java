@@ -20,16 +20,20 @@ public class Contribuinte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
+	
 	@Embedded
 	private Pessoa contribuinte;
+	
 	@Enumerated(EnumType.STRING)
 	private TipoContribuinte tipo;
+	
 	@Embedded
 	private Endereco endereco;
+	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id", nullable = false)
-	private DeclarInventExtr declaracao;
+	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
+	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {
 		return codigo;
@@ -63,11 +67,11 @@ public class Contribuinte {
 		this.endereco = endereco;
 	}
 
-	public DeclarInventExtr getDeclaracao() {
+	public InventarioExtrajudicial getDeclaracao() {
 		return declaracao;
 	}
 
-	public void setDeclaracao(DeclarInventExtr declaracao) {
+	public void setDeclaracao(InventarioExtrajudicial declaracao) {
 		this.declaracao = declaracao;
 	}
 
