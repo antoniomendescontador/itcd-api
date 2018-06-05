@@ -14,14 +14,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "declaracao_inventario_extrajudicial")
+@Table(name = "inventario_extrajudicial")
 public class InventarioExtrajudicial {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private String identificacao;
-
+	
 	@ManyToOne
 	@JoinColumn(name="cartorio_id")
 	private Cartorio cartorio;

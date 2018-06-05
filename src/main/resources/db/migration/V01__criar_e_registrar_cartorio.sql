@@ -1,4 +1,4 @@
-	CREATE TABLE cartorio (
+CREATE TABLE cartorio (
 		codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
 		oficio VARCHAR(15) NOT NULL,
 		nome_cartorio VARCHAR(50) NOT NULL,

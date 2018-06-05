@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.itcd.api.model.InventarioExtrajudicial;
-import com.example.itcd.api.service.DeclarInventExtrService;
+import com.example.itcd.api.service.InventarioExtrajudicialService;
 
 @RestController
 @RequestMapping("/declaracoes")
-public class DeclarInventExtrResource {
+public class InventarioExtrjudicialResource {
 	
 	@Autowired
-	private DeclarInventExtrService service;
+	private InventarioExtrajudicialService service;
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
 	public ResponseEntity<InventarioExtrajudicial> find(@PathVariable Long codigo){

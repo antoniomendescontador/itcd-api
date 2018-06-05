@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.itcd.api.model.InventarioExtrajudicial;
-import com.example.itcd.api.repository.DeclarInventExtrRepository;
+import com.example.itcd.api.repository.InventarioExtrajudicialRepository;
 
 @Service
-public class DeclarInventExtrService {
+public class InventarioExtrajudicialService {
 
 	@Autowired
-	private DeclarInventExtrRepository repo;
+	private InventarioExtrajudicialRepository repo;
 
 	public InventarioExtrajudicial find(Long codigo) {
 		InventarioExtrajudicial obj = repo.findOne(codigo);

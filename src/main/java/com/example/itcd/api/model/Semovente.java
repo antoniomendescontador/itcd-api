@@ -31,7 +31,7 @@ public class Semovente {
 	private BigDecimal valorTotal;
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
+	@JoinColumn(name = "inventario_extrajudicial_id")
 	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {

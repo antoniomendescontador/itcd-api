@@ -45,7 +45,7 @@ public class ImovelUrbano {
 
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "declaracao_inventario_extrajudicial_id")
+	@JoinColumn(name = "inventario_extrajudicial_id")
 	private InventarioExtrajudicial declaracao;
 
 	public Long getCodigo() {

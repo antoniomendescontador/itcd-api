@@ -12,10 +12,10 @@ public class AinfToInventariante {
 	@Test
 	public void calculoAINFInventariante() {
 		
-		String processo = "032017730007810-7";
-		String inventariado = "Deuzarina Dias Barata";
-		String cpfInventariado = "292.604.002-44";
-		Double baseDeCalculo = 180000.00;
+		String processo = "192018730000424-5";
+		String inventariado = "Zulmira Cardoso da Silva";
+		String cpfInventariado = "245.793.512-15";
+		Double baseDeCalculo = 213940.59;
 		Double quantHerdeiros = 1.00;
 		Double cotaHerdeiro = 1/quantHerdeiros;
 		Double aliquota = 0.04;
