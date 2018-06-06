@@ -56,6 +56,28 @@ public class InventarioExtrajudicialService {
 	public InventarioExtrajudicial atualizar(Long codigo, InventarioExtrajudicial inventario) {
 		InventarioExtrajudicial inventarioSalvo = find(codigo);
 		BeanUtils.copyProperties(inventario, inventarioSalvo, "codigo");
+		for (Contribuinte contribuinte : inventarioSalvo.getContribuintes()){
+			contribuinte.setDeclaracao(inventarioSalvo);
+		}
+		for (ImovelUrbano imovelUrbano : inventarioSalvo.getImoveisUrbanos()){
+			imovelUrbano.setDeclaracao(inventarioSalvo);
+			}
+					
+		for(ImovelRural imovelRural : inventarioSalvo.getImoveisRurais()){
+			imovelRural.setDeclaracao(inventarioSalvo);
+		}
+		for(Veiculo veiculo : inventarioSalvo.getVeiculos()){
+			veiculo.setDeclaracao(inventarioSalvo);
+		}
+		for(Semovente semovente : inventarioSalvo.getSemoventes()){
+			semovente.setDeclaracao(inventarioSalvo);
+		}
+		for(AcaoNaoNegociadaBolsa acaoNaoNegociada : inventarioSalvo.getAcaoNaoNegociadaBolsas()){
+			acaoNaoNegociada.setDeclaracao(inventarioSalvo);
+		}
+		for(AcaoNegociadaBolsa acaoNegociadaBolsa : inventarioSalvo.getAcaoNegociadaBolsas()){
+			acaoNegociadaBolsa.setDeclaracao(inventarioSalvo);
+		}
 		return repo.save(inventarioSalvo);
 	}
 	

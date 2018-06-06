@@ -18,7 +18,7 @@ import com.example.itcd.api.service.InventarioExtrajudicialService;
 
 @RestController
 @RequestMapping("/declaracoes")
-public class InventarioExtrjudicialResource {
+public class InventarioExtrajudicialResource {
 	
 	@Autowired
 	private InventarioExtrajudicialService service;

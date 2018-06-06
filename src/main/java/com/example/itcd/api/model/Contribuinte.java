@@ -31,7 +31,7 @@ public class Contribuinte {
 	private Endereco endereco;
 	
 	@JsonIgnore
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name = "inventario_extrajudicial_id")
 	private InventarioExtrajudicial declaracao;
 
