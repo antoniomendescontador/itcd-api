@@ -1,7 +1,6 @@
 package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -20,10 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "imovel_urbano")
 public class ImovelUrbano {
-	/*
-	 * falta fazer o relacionamento muitos para muitos com a classe
-	 * indiceAtualizacao
-	 */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
@@ -40,8 +37,9 @@ public class ImovelUrbano {
 	@Column(name = "valor_avaliado_mt_quadr")
 	private BigDecimal valorAvaliadoMetroQuad;
 
-	@ManyToMany(mappedBy = "imovelUrbanos")
-	private List<IndiceAtualizacao> indices = new ArrayList<>();
+	@ManyToMany
+	@JoinTable(name = "imovel_urbano_indice_atualizacao", joinColumns = @JoinColumn(name = "imovel_urbano_codigo"), inverseJoinColumns = @JoinColumn(name = "indice_atualizacao_codigo"))
+	private List<IndiceAtualizacao> indices;
 
 	@JsonIgnore
 	@ManyToOne

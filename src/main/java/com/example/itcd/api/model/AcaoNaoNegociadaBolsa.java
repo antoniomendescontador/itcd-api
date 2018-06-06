@@ -103,6 +103,14 @@ public class AcaoNaoNegociadaBolsa {
 		this.valorDeclarado = valorDeclarado;
 	}
 
+	public InventarioExtrajudicial getDeclaracao() {
+		return declaracao;
+	}
+
+	public void setDeclaracao(InventarioExtrajudicial declaracao) {
+		this.declaracao = declaracao;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

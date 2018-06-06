@@ -27,25 +27,25 @@ public class InventarioExtrajudicial {
 	private Cartorio cartorio;
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<Contribuinte> contribuinte = new ArrayList<>();
+	private List<Contribuinte> contribuintes = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<ImovelUrbano> imoveUrbano = new ArrayList<>();
+	private List<ImovelUrbano> imoveisUrbanos = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<ImovelRural> imovelRural = new ArrayList<>();
+	private List<ImovelRural> imoveisRurais = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<Veiculo> veiculo = new ArrayList<>();
+	private List<Veiculo> veiculos = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<Semovente> semovente = new ArrayList<>();
+	private List<Semovente> semoventes = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<AcaoNaoNegociadaBolsa> acaoNaoNegociadaBolsa = new ArrayList<>();
+	private List<AcaoNaoNegociadaBolsa> acaoNaoNegociadaBolsas = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
-	private List<AcaoNegociadaBolsa> acaoNegociadaBolsa = new ArrayList<>();
+	private List<AcaoNegociadaBolsa> acaoNegociadaBolsas = new ArrayList<>();
 
 	public Long getCodigo() {
 		return codigo;
@@ -71,60 +71,60 @@ public class InventarioExtrajudicial {
 		this.cartorio = cartorio;
 	}
 
-	public List<Contribuinte> getContribuinte() {
-		return contribuinte;
+	public List<Contribuinte> getContribuintes() {
+		return contribuintes;
+	}
+	
+	public void setContribuintes(List<Contribuinte> contribuintes) {
+		this.contribuintes = contribuintes;
 	}
 
-	public void setContribuinte(List<Contribuinte> contribuinte) {
-		this.contribuinte = contribuinte;
+	public List<ImovelUrbano> getImoveisUrbanos() {
+		return imoveisUrbanos;
 	}
 
-	public List<ImovelUrbano> getImoveUrbano() {
-		return imoveUrbano;
+	public void setImoveisUrbanos(List<ImovelUrbano> imoveisUrbanos) {
+		this.imoveisUrbanos = imoveisUrbanos;
 	}
 
-	public void setImoveUrbano(List<ImovelUrbano> imoveUrbano) {
-		this.imoveUrbano = imoveUrbano;
+	public List<ImovelRural> getImoveisRurais() {
+		return imoveisRurais;
 	}
 
-	public List<ImovelRural> getImovelRural() {
-		return imovelRural;
+	public void setImoveisRurais(List<ImovelRural> imoveisRurais) {
+		this.imoveisRurais = imoveisRurais;
 	}
 
-	public void setImovelRural(List<ImovelRural> imovelRural) {
-		this.imovelRural = imovelRural;
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
 	}
 
-	public List<Veiculo> getVeiculo() {
-		return veiculo;
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
 	}
 
-	public void setVeiculo(List<Veiculo> veiculo) {
-		this.veiculo = veiculo;
+	public List<Semovente> getSemoventes() {
+		return semoventes;
 	}
 
-	public List<Semovente> getSemovente() {
-		return semovente;
+	public void setSemoventes(List<Semovente> semoventes) {
+		this.semoventes = semoventes;
 	}
 
-	public void setSemovente(List<Semovente> semovente) {
-		this.semovente = semovente;
+	public List<AcaoNaoNegociadaBolsa> getAcaoNaoNegociadaBolsas() {
+		return acaoNaoNegociadaBolsas;
 	}
 
-	public List<AcaoNaoNegociadaBolsa> getAcaoNaoNegociadaBolsa() {
-		return acaoNaoNegociadaBolsa;
+	public void setAcaoNaoNegociadaBolsas(List<AcaoNaoNegociadaBolsa> acaoNaoNegociadaBolsas) {
+		this.acaoNaoNegociadaBolsas = acaoNaoNegociadaBolsas;
 	}
 
-	public void setAcaoNaoNegociadaBolsa(List<AcaoNaoNegociadaBolsa> acaoNaoNegociadaBolsa) {
-		this.acaoNaoNegociadaBolsa = acaoNaoNegociadaBolsa;
+	public List<AcaoNegociadaBolsa> getAcaoNegociadaBolsas() {
+		return acaoNegociadaBolsas;
 	}
 
-	public List<AcaoNegociadaBolsa> getAcaoNegociadaBolsa() {
-		return acaoNegociadaBolsa;
-	}
-
-	public void setAcaoNegociadaBolsa(List<AcaoNegociadaBolsa> acaoNegociadaBolsa) {
-		this.acaoNegociadaBolsa = acaoNegociadaBolsa;
+	public void setAcaoNegociadaBolsas(List<AcaoNegociadaBolsa> acaoNegociadaBolsas) {
+		this.acaoNegociadaBolsas = acaoNegociadaBolsas;
 	}
 
 	@Override

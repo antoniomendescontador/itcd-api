@@ -1,20 +1,13 @@
 package com.example.itcd.api.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "indice_atualizacao")
@@ -29,11 +22,6 @@ public class IndiceAtualizacao {
 	private BigDecimal indiceAtualizIptu;
 	@Column(name = "indice_atualiz_cub")
 	private BigDecimal indiceAtualizCub;
-
-	@JsonIgnore
-	@ManyToMany
-	@JoinTable(name = "imovel_urbano_indice_atualizacao", joinColumns = @JoinColumn(name = "indice_atualizacao_codigo"), inverseJoinColumns = @JoinColumn(name = "imovel_urbano_codigo"))
-	private List<ImovelUrbano> imovelUrbanos = new ArrayList<>();
 
 	public Long getCodigo() {
 		return codigo;
@@ -73,14 +61,6 @@ public class IndiceAtualizacao {
 
 	public void setIndiceAtualizCub(BigDecimal indiceAtualizCub) {
 		this.indiceAtualizCub = indiceAtualizCub;
-	}
-
-	public List<ImovelUrbano> getImovelUrbanos() {
-		return imovelUrbanos;
-	}
-
-	public void setImovelUrbanos(List<ImovelUrbano> imovelUrbanos) {
-		this.imovelUrbanos = imovelUrbanos;
 	}
 
 	@Override

@@ -30,11 +30,20 @@ public class InventarioExtrjudicialResource {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@Valid @RequestBody InventarioExtrajudicial obj) {
-		obj = service.insert(obj);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{codigo}").buildAndExpand(obj.getCodigo()).toUri();
+	public ResponseEntity<Void> insert(@RequestBody InventarioExtrajudicial inventario) {
+		inventario = service.insert(inventario);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{codigo}").buildAndExpand(inventario.getCodigo()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
+	
+	
+	@RequestMapping(value="/{codigo}", method=RequestMethod.PUT)
+	public ResponseEntity<InventarioExtrajudicial> atualizar(@PathVariable Long codigo, @Valid @RequestBody InventarioExtrajudicial inventario) {
+		InventarioExtrajudicial inventarioSalvo = service.atualizar(codigo, inventario);
+		return ResponseEntity.ok(inventarioSalvo);
+	}
+	
+	
 
 	
 
