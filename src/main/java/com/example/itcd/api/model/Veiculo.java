@@ -30,6 +30,7 @@ public class Veiculo {
 	/* retirar da webservice de tabela fipe */
 	@Column(name = "valor_avaliado")
 	private BigDecimal valorAvaliado;
+
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "inventario_extrajudicial_id")
@@ -130,6 +131,31 @@ public class Veiculo {
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Veiculo [");
+		builder.append(codigo);
+		builder.append(", ");
+		builder.append(renavan);
+		builder.append(", ");
+		builder.append(placa);
+		builder.append(", ");
+		builder.append(marca);
+		builder.append(", ");
+		builder.append(modelo);
+		builder.append(", ");
+		builder.append(ano);
+		builder.append(", ");
+		builder.append(valorDeclarado);
+		builder.append(", ");
+		builder.append(valorAvaliado);
+		builder.append(", ");
+		builder.append(declaracao);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

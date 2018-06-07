@@ -24,4 +24,16 @@ CREATE TABLE cartorio (
 
 INSERT INTO cartorio (oficio, nome_cartorio, comarca, cnpj, ativo, observacao, nome, cpf, email, telefone, logradouro, numero, complemento, bairro, cep, cidade, estado)
  values 
-('1º Ofício','Conduru','Belem','12009233000132', true,'Cartório nota 10','joão','888444555','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
+('1º Ofício','Conduru','Belem','58.088.227/0001-10', true,'Cartório nota 10','joão','124.032.080-94','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
+INSERT INTO cartorio (oficio, nome_cartorio, comarca, cnpj, ativo, observacao, nome, cpf, email, telefone, logradouro, numero, complemento, bairro, cep, cidade, estado)
+ values 
+('1º Ofício','Shermon','Belem','49.773.538/0001-28', true,'Cartório nota 10','joão','454.950.480-32','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
+INSERT INTO cartorio (oficio, nome_cartorio, comarca, cnpj, ativo, observacao, nome, cpf, email, telefone, logradouro, numero, complemento, bairro, cep, cidade, estado)
+ values 
+('1º Ofício','Afonso','Belem','84.391.347/0001-00', true,'Cartório nota 10','joão','013.372.770-02','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
+INSERT INTO cartorio (oficio, nome_cartorio, comarca, cnpj, ativo, observacao, nome, cpf, email, telefone, logradouro, numero, complemento, bairro, cep, cidade, estado)
+ values 
+('1º Ofício','Pedro Bento','Belem','65.990.558/0001-07', true,'Cartório nota 10','joão','555.599.850-31','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
+INSERT INTO cartorio (oficio, nome_cartorio, comarca, cnpj, ativo, observacao, nome, cpf, email, telefone, logradouro, numero, complemento, bairro, cep, cidade, estado)
+ values 
+('1º Ofício','Olimpia','Belem','20.621.623/0001-99', true,'Cartório nota 10','joão','860.334.190-73','joao@gmail','9199456', 'Av. tres de maio', '400', 'casa 5', 'nazare', '66.063-075', 'Belem', 'PA');
