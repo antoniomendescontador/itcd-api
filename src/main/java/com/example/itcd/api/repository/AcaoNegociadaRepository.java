@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.itcd.api.model.AcaoNegociadaBolsa;
 
 @Repository
-public interface AcaoNeogiadaRepository extends JpaRepository<AcaoNegociadaBolsa, Long> {
+public interface AcaoNegociadaRepository extends JpaRepository<AcaoNegociadaBolsa, Long> {
 
 }
