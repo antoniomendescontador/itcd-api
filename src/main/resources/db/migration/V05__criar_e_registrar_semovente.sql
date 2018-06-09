@@ -13,3 +13,9 @@ CREATE TABLE semovente (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 0 A 12 MESES (MACHO)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 4 A 12 MESES (MACHO)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 8 A 12 MESES (MACHO)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 0 A 12 MESES (FEMEA)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 4 A 12 MESES (FEMEA)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+INSERT INTO semovente (produto, unidade, valor_declarado, boletim_preco_minimo, quantidade, valor_total,inventario_extrajudicial_id) values ('BOVINOS DE 8 A 12 MESES (FEMEA)','cb', 400.00, 800.00, 10.00, 8000.00,1);
+

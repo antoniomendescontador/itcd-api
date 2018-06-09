@@ -24,6 +24,8 @@ public class ImovelUrbano {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
+	@Column(name = "metro_quadrado")
+	private BigDecimal metroQuadrado;
 	@Embedded
 	private Propriedade propriedade;
 	@Embedded
@@ -52,6 +54,14 @@ public class ImovelUrbano {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public BigDecimal getMetroQuadrado() {
+		return metroQuadrado;
+	}
+
+	public void setMetroQuadrado(BigDecimal metroQuadrado) {
+		this.metroQuadrado = metroQuadrado;
 	}
 
 	public Propriedade getPropriedade() {

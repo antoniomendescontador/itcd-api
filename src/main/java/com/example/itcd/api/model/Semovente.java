@@ -29,6 +29,7 @@ public class Semovente {
 	private BigDecimal quantidade;
 	@Column(name = "valor_total")
 	private BigDecimal valorTotal;
+	
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "inventario_extrajudicial_id")

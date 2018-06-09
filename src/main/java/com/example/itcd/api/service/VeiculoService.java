@@ -39,13 +39,7 @@ public class VeiculoService {
 	public Veiculo update(Veiculo obj, Long codigo) {
 		Veiculo veiculoSalvo = repo.findOne(codigo);
 		
-		System.out.println(veiculoSalvo);
-		System.out.println("Veiculo ["+obj.getCodigo()+", "+obj.getRenavan()+", "+obj.getPlaca()+", "+obj.getMarca()+", "+obj.getModelo()+", "+obj.getAno()+", "+obj.getValorDeclarado()+", "+obj.getValorAvaliado()+", "+obj.getDeclaracao()+"]");
-				
 		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
-		
-		System.out.println(veiculoSalvo);
-		System.out.println("Veiculo ["+obj.getCodigo()+", "+obj.getRenavan()+", "+obj.getPlaca()+", "+obj.getMarca()+", "+obj.getModelo()+", "+obj.getAno()+", "+obj.getValorDeclarado()+", "+obj.getValorAvaliado()+", "+obj.getDeclaracao()+"]");
 		
 		return repo.save(veiculoSalvo);
 	}
@@ -56,7 +50,7 @@ public class VeiculoService {
 			repo.delete(codigo);
 		}
 		catch (DataIntegrityViolationException e) {
-			throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos");
+			throw new DataIntegrityException("Não é possível excluir entidade que possui agregação");
 		}
 	}
 	

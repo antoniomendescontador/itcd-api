@@ -38,7 +38,7 @@ public class InventarioExtrajudicial {
 	@OneToMany(mappedBy = "declaracao", cascade=CascadeType.ALL)
 	private List<Veiculo> veiculos = new ArrayList<>();
 
-	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "declaracao")
 	private List<Semovente> semoventes = new ArrayList<>();
 
 	@OneToMany(mappedBy = "declaracao", cascade = CascadeType.ALL)
