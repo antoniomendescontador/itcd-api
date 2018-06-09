@@ -37,11 +37,11 @@ public class AcaoNegociadaService {
 	}
 	
 	public AcaoNegociadaBolsa update(AcaoNegociadaBolsa obj, Long codigo) {
-		AcaoNegociadaBolsa veiculoSalvo = repo.findOne(codigo);
+		AcaoNegociadaBolsa objSalvo = repo.findOne(codigo);
 		
-		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
+		BeanUtils.copyProperties(obj, objSalvo, "codigo","declaracao");
 		
-		return repo.save(veiculoSalvo);
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

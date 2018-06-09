@@ -37,9 +37,9 @@ public class IndiceAtualizacaoService {
 	}
 	
 	public IndiceAtualizacao update(IndiceAtualizacao obj, Long codigo) {
-		IndiceAtualizacao cartorioSalvo = repo.findOne(codigo);
-		BeanUtils.copyProperties(obj, cartorioSalvo, "codigo");
-		return repo.save(cartorioSalvo);
+		IndiceAtualizacao objSalvo = repo.findOne(codigo);
+		BeanUtils.copyProperties(obj, objSalvo, "codigo");
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

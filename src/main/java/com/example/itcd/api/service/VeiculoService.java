@@ -37,11 +37,11 @@ public class VeiculoService {
 	}
 	
 	public Veiculo update(Veiculo obj, Long codigo) {
-		Veiculo veiculoSalvo = repo.findOne(codigo);
+		Veiculo objSalvo = repo.findOne(codigo);
 		
-		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
+		BeanUtils.copyProperties(obj, objSalvo, "codigo","declaracao");
 		
-		return repo.save(veiculoSalvo);
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

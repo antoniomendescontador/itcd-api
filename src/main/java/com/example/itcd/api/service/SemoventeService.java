@@ -37,11 +37,11 @@ public class SemoventeService {
 	}
 	
 	public Semovente update(Semovente obj, Long codigo) {
-		Semovente veiculoSalvo = repo.findOne(codigo);
+		Semovente objSalvo = repo.findOne(codigo);
 		
-		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
+		BeanUtils.copyProperties(obj, objSalvo, "codigo","declaracao");
 		
-		return repo.save(veiculoSalvo);
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

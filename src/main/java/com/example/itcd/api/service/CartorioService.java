@@ -37,9 +37,9 @@ public class CartorioService {
 	}
 	
 	public Cartorio update(Cartorio obj, Long codigo) {
-		Cartorio cartorioSalvo = repo.findOne(codigo);
-		BeanUtils.copyProperties(obj, cartorioSalvo, "codigo");
-		return repo.save(cartorioSalvo);
+		Cartorio objSalvo = repo.findOne(codigo);
+		BeanUtils.copyProperties(obj, objSalvo, "codigo");
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

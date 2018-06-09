@@ -37,11 +37,11 @@ public class ImovelRuralService {
 	}
 	
 	public ImovelRural update(ImovelRural obj, Long codigo) {
-		ImovelRural veiculoSalvo = repo.findOne(codigo);
+		ImovelRural objSalvo = repo.findOne(codigo);
 		
-		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
+		BeanUtils.copyProperties(obj, objSalvo, "codigo","declaracao");
 		
-		return repo.save(veiculoSalvo);
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

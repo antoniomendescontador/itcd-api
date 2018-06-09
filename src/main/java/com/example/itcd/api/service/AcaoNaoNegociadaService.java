@@ -37,11 +37,9 @@ public class AcaoNaoNegociadaService {
 	}
 	
 	public AcaoNaoNegociadaBolsa update(AcaoNaoNegociadaBolsa obj, Long codigo) {
-		AcaoNaoNegociadaBolsa veiculoSalvo = repo.findOne(codigo);
-		
-		BeanUtils.copyProperties(obj, veiculoSalvo, "codigo","declaracao");
-		
-		return repo.save(veiculoSalvo);
+		AcaoNaoNegociadaBolsa objSalvo = repo.findOne(codigo);
+		BeanUtils.copyProperties(obj, objSalvo, "codigo","declaracao");
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {

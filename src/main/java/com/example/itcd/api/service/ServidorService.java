@@ -37,9 +37,9 @@ public class ServidorService {
 	}
 	
 	public Servidor update(Servidor obj, Long codigo) {
-		Servidor cartorioSalvo = repo.findOne(codigo);
-		BeanUtils.copyProperties(obj, cartorioSalvo, "codigo");
-		return repo.save(cartorioSalvo);
+		Servidor objSalvo = repo.findOne(codigo);
+		BeanUtils.copyProperties(obj, objSalvo, "codigo");
+		return repo.save(objSalvo);
 	}
 
 	public void delete(Long codigo) {
